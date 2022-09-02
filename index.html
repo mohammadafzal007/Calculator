@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<link href="index.css" rel="stylesheet"> 
+</head>
+  <body>
+    <div class="container">
+      <h1 id="heading">Mini Calculator</h1>
+      <div class="box">
+        <form name="form">
+          <input type="text" id="input" name="input" autofocus autocomplete="off"/>
+        </form>
+
+        <div class="main_box">
+          <button type="button"  onclick="allclear()" >AC</button>
+          <button type="button"  onclick="delete1()" >DEL</button>
+          <button type="button"  onclick="insert('/')" >/</button>
+          <button type="button"  onclick="insert('*')" >x</button>
+          <button type="button"  onclick="insert('9')" >9</button>
+          <button type="button"  onclick="insert('8')" >8</button>
+          <button type="button"  onclick="insert('7')" >7</button>
+          <button type="button"  onclick="insert('+')" >+</button>
+          <button type="button"  onclick="insert('6')" >6</button>
+          <button type="button"  onclick="insert('5')" >5</button>
+          <button type="button"  onclick="insert('4')" >4</button>
+          <button type="button"  onclick="insert('-')">-</button>
+          <button type="button"  onclick="insert('3')" >3</button>
+          <button type="button"  onclick="insert('2')" >2</button>
+          <button type="button"  onclick="insert('1')" >1</button>
+          <button type="button"  onclick="sqr()" >x<sup>2</sup></button>
+          <button type="button"  onclick="insert('.')" >.</button>
+          <button type="button"  onclick="insert('0')" id="zero">0</button>
+        <button type="button"  onclick="calculate()" id="eval">=</button>
+          <button type="button"  onclick="sqrt()" >&#8730;x</button>
+        </div>
+      </div>
+    </div>
+    <script>
+   
+      let input = document.getElementById("input");
+
+      function insert(num) {
+        input.value+=num;
+        console.log("clicked", num);
+        // alert("hello");
+
+      }
+
+      function calculate(){
+        input.value=eval(input.value);
+
+      }
+      function delete1(){
+        input.value=(input.value).slice(0,(input.value).length-1);
+      }
+      
+      function sqr(){
+          input.value=Math.pow(input.value,2);
+      }
+
+      function sqrt(){
+          input.value=Math.sqrt(input.value);
+      }
+
+      function allclear(){
+         input.value='';
+        console.log("AllClear");
+
+      }
+    
+      
+    </script
+  </body>
+</html>
